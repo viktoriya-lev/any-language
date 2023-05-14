@@ -1,0 +1,94 @@
+@import "main.module";
+
+.about-workshop {
+  @include section-padding();
+  background-color: $white;
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $layout-breakpoint-big) {
+      align-items: flex-end;
+    }
+
+    @media (max-width: $layout-breakpoint-medium) {
+      flex-direction: column;
+      row-gap: 27px;
+      justify-content: unset;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    @include title--2();
+    margin-bottom: 25px;
+
+    @media (max-width: $layout-breakpoint-medium) {
+      text-align: center;
+    }
+  }
+
+  &__info,
+  &__img {
+    width: calc(558 / 1170 * 100%);
+
+    @media (max-width: $layout-breakpoint-medium) {
+      width: 80%;
+    }
+
+    @media (max-width: $layout-breakpoint-small) {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    padding-left: 35px;
+    @include text();
+    position: relative;
+
+    @media (max-width: $layout-breakpoint-big) {
+      padding-left: 25px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+
+      @media (max-width: $layout-breakpoint-big) {
+        margin-bottom: 15px;
+      }
+    }
+
+    &::before {
+      @include pseudo();
+      top: 6px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      background: transparent url("https://fs.advance.ru/landing-pages/course/lyuboy_inostrannyi_za_mesyac/big-check.svg") no-repeat center center / contain;
+
+      @media (max-width: $layout-breakpoint-big) {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+
+  &__img {
+    height: 558px;
+    border-radius: 20px;
+    line-height: 0;
+    background: transparent url("https://fs.advance.ru/landing-pages/course/lyuboy_inostrannyi_za_mesyac/photo-ontraining.png") no-repeat center center / contain;
+
+    @media (max-width: $layout-breakpoint-big) {
+      height: 346px;
+    }
+
+    @media (max-width: $layout-breakpoint-small) {
+      height: 300px;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import "main.module";
+
+.reviews {
+  padding: 100px 0;
+  background-color: $gray--athens;
+  overflow: hidden;
+
+  @media (max-width: $layout-breakpoint-big) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: $layout-breakpoint-small) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  &__title {
+    margin-bottom: 42px;
+    @include title--2();
+    text-align: center;
+
+    @media (max-width: $layout-breakpoint-big) {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: $layout-breakpoint-small) {
+      margin-bottom: 15px;
+    }
+  }
+}

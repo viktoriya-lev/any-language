@@ -1,0 +1,61 @@
+@import "main.module";
+
+.our-licenses {
+  padding: 100px 0;
+  background-color: $white;
+
+  @media (max-width: $layout-breakpoint-medium) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: $layout-breakpoint-small) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  &__title {
+    margin-bottom: 35px;
+    @include title--2();
+    color: $text--2;
+    text-align: center;
+
+    @media (max-width: $layout-breakpoint-big) {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: $layout-breakpoint-small) {
+      margin-bottom: 15px;
+      font-size: 20px;
+      text-align: left;
+    }
+  }
+
+  &__top,
+  &__bottom {
+    padding: 55px 100px;
+    border-radius: 30px;
+
+    @media (max-width: $layout-breakpoint-big) {
+      padding: 30px 60px;
+    }
+
+    @media (max-width: $layout-breakpoint-small) {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+
+  &__top {
+    margin-bottom: 50px;
+    background-color: #F7F0FF;
+
+    @media (max-width: $layout-breakpoint-small) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__bottom {
+    background-color: #FFE7E7;
+  }
+}

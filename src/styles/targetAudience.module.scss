@@ -1,0 +1,81 @@
+@import "main.module";
+
+.target-audience {
+  @include section-padding();
+  background-color: $white;
+
+  &__title {
+    @include title--2();
+    margin-bottom: 43px;
+    text-align: center;
+
+    @media (max-width: $layout-breakpoint-big) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    gap: 30px;
+
+    @media (max-width: $layout-breakpoint-big) {
+      gap: 15px;
+    }
+
+    @media (max-width: $layout-breakpoint-medium) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+
+  &__item {
+    width: 32%;
+    min-height: 265px;
+    border-radius: 20px;
+    padding: 40px 68px 113px 40px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: contain;
+
+    @media (max-width: $layout-breakpoint-big) {
+      min-height: 165px;
+      padding: 25px 45px 70px 25px;
+    }
+
+    @media (max-width: $layout-breakpoint-medium) {
+      width: 70%;
+      min-height: auto;
+    }
+
+    @media (max-width: $layout-breakpoint-small) {
+      width: 100%;
+      padding: 29px 102px 29px 25px;
+    }
+
+    &--one {
+      background-color: $purple--light;
+      background-image: url("https://fs.advance.ru/landing-pages/course/lyuboy_inostrannyi_za_mesyac/foryou-01.png");
+    }
+
+    &--two {
+      background-color: $pink--light;
+      background-image: url("https://fs.advance.ru/landing-pages/course/lyuboy_inostrannyi_za_mesyac/foryou-02.png");
+    }
+
+    &--three {
+      background-color: $blue--light;
+      background-image: url("https://fs.advance.ru/landing-pages/course/lyuboy_inostrannyi_za_mesyac/foryou-03.png");
+    }
+  }
+
+  &__text {
+    max-width: 80%;
+    @include text();
+    font-size: 26px;
+
+    @media (max-width: $layout-breakpoint-small) {
+      width: 100%;
+    }
+  }
+}

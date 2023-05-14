@@ -1,0 +1,87 @@
+@import "main.module";
+
+.lessons {
+  @include section-padding();
+  background-color: $white;
+
+  @media (max-width: $layout-breakpoint-small) {
+    padding-bottom: 30px;
+  }
+
+  &__list {
+    padding: 80px 68px;
+    border-radius: 20px;
+    background-color: $gray--athens;
+
+    @media (max-width: $layout-breakpoint-big) {
+      padding: 50px 45px;
+    }
+
+    @media (max-width: $layout-breakpoint-small) {
+      padding: 20px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 28px 30px 28px 0;
+    border-radius: 20px;
+    background-color: $white;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+
+      @media (max-width: $layout-breakpoint-small) {
+        margin-bottom: 10px;
+      }
+    }
+
+    @media (max-width: $layout-breakpoint-big) {
+      padding: 20px 37px 20px 0;
+    }
+
+    @media (max-width: $layout-breakpoint-small) {
+      flex-direction: column;
+      padding: 20px;
+    }
+  }
+
+  &__img-cover {
+    max-width: 196px;
+
+    @media (max-width: $layout-breakpoint-big) {
+      max-width: 136px;
+    }
+
+    @media (max-width: $layout-breakpoint-small) {
+      max-width: 117px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__descr {
+    width: 75%;
+
+    @media (max-width: $layout-breakpoint-small) {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    @include text();
+
+    &--bold {
+      font-weight: 700;
+    }
+
+    &--margin {
+      margin-bottom: 20px;
+
+      @media (max-width: $layout-breakpoint-small) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

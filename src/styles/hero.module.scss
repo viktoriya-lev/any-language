@@ -1,0 +1,272 @@
+@import "main.module";
+
+.hero {
+  @include section-padding();
+  padding-top: 0;
+  font-family: $font-family;
+  background-color: $white;
+
+  @media (max-width: $layout-breakpoint-big) {
+    padding-top: 0;
+  }
+
+  @media (max-width: $layout-breakpoint-medium) {
+    padding-top: 0;
+  }
+
+  @media (max-width: $layout-breakpoint-small) {
+    padding-top: 0;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__bage {
+    margin-bottom: 10px;
+    padding: 0 17px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.6;
+    text-align: center;
+    color: $white;
+    background-color: $purple--dark;
+
+    @media (max-width: $layout-breakpoint-big) {
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: $layout-breakpoint-small) {
+      width: 100%;
+      margin-bottom: 25px;
+      border-radius: 3px;
+    }
+  }
+
+  &__title {
+    @include title--main();
+    margin-bottom: 25px;
+
+    @media (max-width: $layout-breakpoint-big) {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: $layout-breakpoint-small) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 45px;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 1.2;
+    text-align: center;
+    color: $text--main;
+
+    @media (max-width: $layout-breakpoint-big) {
+      max-width: 700px;
+      margin-bottom: 35px;
+      font-size: 22px;
+    }
+
+    @media (max-width: $layout-breakpoint-small) {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 55px;
+
+    @media (max-width: $layout-breakpoint-big) {
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: $layout-breakpoint-medium) {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    @media (max-width: $layout-breakpoint-small) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__btn {
+    @include btn();
+    padding-top: 16px;
+    padding-bottom: 19px;
+
+    @media (max-width: $layout-breakpoint-big) {
+      padding-top: 12px;
+      padding-bottom: 14px;
+    }
+  }
+
+  &__btn--main {
+    padding-left: 64px;
+    padding-right: 64px;
+    color: $white;
+    background-color: $purple--main;
+
+    @media (max-width: $layout-breakpoint-big) {
+      padding-left: 61px;
+      padding-right: 61px;
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+      background-color: $purple--main-2;
+    }
+  }
+
+  &__btn--simple {
+    padding-left: 38px;
+    padding-right: 38px;
+    border: 1px solid $text--main;
+    color: $text--main;
+    background-color: $white;
+
+    @media (max-width: $layout-breakpoint-big) {
+      padding-left: 35px;
+      padding-right: 35px;
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+      background-color: $gray--dark;
+    }
+  }
+
+  &__img {
+    margin-bottom: 53px;
+
+    @media (max-width: $layout-breakpoint-big) {
+      margin-bottom: 30px;
+    }
+
+  }
+
+  &__details {
+    display: flex;
+    align-items: stretch;
+    gap: 2px;
+    width: 100%;
+
+    @media (max-width: $layout-breakpoint-small) {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    &-item {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      width: 33.3%;
+      min-height: 190px;
+      padding: 90px 16px 30px;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 1.15;
+      text-align: center;
+      background-color: $gray--light;
+      position: relative;
+
+      @media (max-width: $layout-breakpoint-big) {
+        min-height: 120px;
+        padding-top: 55px;
+        padding-bottom: 15px;
+        font-size: 14px;
+      }
+
+      @media (max-width: $layout-breakpoint-small) {
+        width: 49.6%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+
+        &:nth-child(2) {
+          border-top-right-radius: 20px;
+        }
+
+        &:nth-child(3) {
+          border-bottom-left-radius: 20px;
+        }
+      }
+
+      &:first-of-type {
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+
+        @media (max-width: $layout-breakpoint-small) {
+          border-bottom-left-radius: 0;
+        }
+      }
+
+      &:last-of-type {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+        @media (max-width: $layout-breakpoint-small) {
+          border-top-right-radius: 0;
+        }
+      }
+
+      &::before {
+        @include pseudo();
+        top: 30px;
+        bottom: 0;
+        left: calc(50% - 25px);
+        right: 0;
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        @media (max-width: $layout-breakpoint-big) {
+          top: 20px;
+          left: calc(50% - 15px);
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      &--one {
+        &::before {
+          background-image: url("https://fs.advance.ru/landing-pages/course/lyuboy_inostrannyi_za_mesyac/icon-01-practic.svg");
+        }
+      }
+
+      &--two {
+        &::before {
+          background-image: url("https://fs.advance.ru/landing-pages/course/lyuboy_inostrannyi_za_mesyac/icon-02-zanyatie.svg");
+        }
+      }
+
+      &--three {
+        &::before {
+          background-image: url("https://fs.advance.ru/landing-pages/course/lyuboy_inostrannyi_za_mesyac/icon-03-support.svg");
+        }
+      }
+
+      &--four {
+        &::before {
+          background-image: url("https://fs.advance.ru/landing-pages/course/lyuboy_inostrannyi_za_mesyac/icon-04-chat.svg");
+        }
+      }
+    }
+  }
+}
